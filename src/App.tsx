@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import BudgetsPage from './pages/BudgetsPage';
 import { authService } from './services/auth.service';
 
 // Componente para proteger rutas privadas
@@ -23,6 +24,16 @@ function App() {
           element={
             <PrivateRoute>
               <DashboardPage />
+            </PrivateRoute>
+          }
+        />
+        
+        {/* Ruta privada - Presupuestos */}
+        <Route
+          path="/budgets"
+          element={
+            <PrivateRoute>
+              <BudgetsPage />
             </PrivateRoute>
           }
         />
